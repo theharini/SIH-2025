@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriPlay - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h2>AgriPlay 🌱</h2>
+    <ul>
+      <li>Home</li>
+      <li>Games</li>
+      <li>Tips</li>
+      <li>Profile</li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to AgriPlay 🌱</h1>
+    <p>Learn sustainable farming practices in a fun and interactive way through gamified mini-games. Save water, fight pests, and grow your farm smarter!</p>
+    <button onclick="alert('Redirect to mini-games')">Start Playing 🎮</button>
+    <div class="floating-icons">
+      <span class="emoji">💧</span>
+      <span class="emoji">🐛</span>
+      <span class="emoji">🌿</span>
+    </div>
+  </section>
+
+  <!-- Mini-Games Section -->
+  <section>
+    <h2>Mini-Games</h2>
+    <div class="game-cards">
+      <div class="game-card">💧 Water Conservation Game</div>
+      <div class="game-card">🐛 Pest Control Challenge</div>
+      <div class="game-card">🌱 Crop Planning Simulator</div>
+    </div>
+  </section>
+
+  <!-- Sustainability Tips Section -->
+  <section class="tips-section">
+    <h2>Farming Tips</h2>
+    <div class="tip-cards">
+      <div class="tip-card">💧 Water crops efficiently</div>
+      <div class="tip-card">🌿 Use organic fertilizers</div>
+      <div class="tip-card">🛒 Track market prices</div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-section">
+    <h2>Contact Us / Join Us</h2>
+    <p>Want to be part of AgriPlay or have questions? Fill out the form below!</p>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="formMsg"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 AgriPlay | Contact: info@agriplay.com
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
