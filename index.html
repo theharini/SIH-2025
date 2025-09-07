@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriPlay - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #2e7d32;
+            margin-bottom: 25px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .login-container button:hover {
+            background-color: #388e3c;
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .login-container p {
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .login-container a {
+            color: #2e7d32;
+            text-decoration: none;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+            .login-container h2 {
+                font-size: 1.5em;
+            }
+            .login-container button {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>AgriPlay Login 🌱</h2>
+        <input type="text" id="user" placeholder="Username or Email" required>
+        <input type="password" id="pass" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <a href="#">Sign Up</a></p>
+    </div>
+
+    <script>
+        // Demo user (replace with Firebase or backend later)
+        const sampleUser = {
+            username: "farmer123",
+            email: "farmer@example.com",
+            password: "123456"
+        };
+        localStorage.setItem("user", JSON.stringify(sampleUser));
+
+        function login() {
+            const inputUser = document.getElementById('user').value.trim();
+            const inputPass = document.getElementById('pass').value.trim();
+
+            const storedUser = JSON.parse(localStorage.getItem("user"));
+
+            if (!inputUser || !inputPass) {
+                alert("Please enter username/email and password!");
+                return;
+            }
+
+            if ((inputUser === storedUser.username || inputUser === storedUser.email) 
+                && inputPass === storedUser.password) {
+                // Login successful
+                localStorage.setItem("loggedIn", "true"); // store login flag
+                alert("Login successful! Redirecting to Home...");
+                window.location.href = "home.html"; // your Hero/Home section file
+            } else {
+                alert("Invalid username/email or password!");
+            }
+        }
+    </script>
+
+</body>
+</html>
