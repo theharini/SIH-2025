@@ -1,0 +1,98 @@
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: 'Roboto', sans-serif; line-height:1.5; }
+
+/* Navbar */
+nav {
+  width: 100%;
+  background-color: #2e7d32;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+nav h2 { font-size:1.5em; cursor:pointer; }
+nav ul { list-style: none; display: flex; gap: 15px; flex-wrap: wrap; }
+nav ul li { cursor: pointer; font-size: 0.95em; }
+nav ul li:hover { text-decoration: underline; }
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0,128,0,0.5), rgba(0,100,0,0.5)),
+              url('https://images.unsplash.com/photo-1598514983383-05a1a67b6e54?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.hero h1 { font-size: 2.5em; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); margin-bottom: 15px; animation: fadeInDown 1s forwards; animation-delay: 0.3s; opacity:0; transform: translateY(-20px);}
+.hero p { font-size:1em; max-width:500px; text-shadow:1px 1px 6px rgba(0,0,0,0.6); margin-bottom: 20px; animation: fadeInUp 1s forwards; animation-delay: 0.6s; opacity:0; transform: translateY(20px);}
+.hero button { background-color: #4caf50; color:white; border:none; padding:12px 25px; border-radius:50px; cursor:pointer; font-size:1em; transition: all 0.3s ease; animation: fadeInScale 1s forwards; animation-delay:1s; opacity:0; transform: scale(0.8);}
+.hero button:hover { background-color: #388e3c; transform: scale(1.05); }
+
+/* Floating Icons */
+.floating-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.floating-icons .emoji {
+  position: absolute;
+  font-size: 2em;
+  animation: floatUp 6s infinite;
+}
+.floating-icons .emoji:nth-child(1) { left: 10%; animation-delay: 0s; }
+.floating-icons .emoji:nth-child(2) { left: 50%; animation-delay: 2s; }
+.floating-icons .emoji:nth-child(3) { left: 80%; animation-delay: 4s; }
+@keyframes floatUp {
+  0% { transform: translateY(100vh); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh); opacity:0; }
+}
+@keyframes fadeInDown { to {opacity:1; transform: translateY(0);} }
+@keyframes fadeInUp { to {opacity:1; transform: translateY(0);} }
+@keyframes fadeInScale { to {opacity:1; transform: scale(1);} }
+
+/* Sections */
+section { padding: 40px 20px; text-align: center; }
+h2 { color:#2e7d32; margin-bottom: 25px; font-size:1.5em; }
+
+/* Cards */
+.game-cards, .tip-cards { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+.game-card, .tip-card { background:white; border-radius:15px; padding:20px; width:90%; max-width:300px; box-shadow:0 5px 15px rgba(0,0,0,0.2); transition: transform 0.3s ease; cursor:pointer; }
+.game-card:hover, .tip-card:hover { transform: scale(1.03); }
+
+/* Contact Form */
+.contact-section { background-color:#e8f5e9; padding:50px 20px; }
+#contactForm { max-width:500px; margin:20px auto; display:flex; flex-direction:column; gap:15px; }
+#contactForm input, #contactForm textarea { padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1em; width:100%; }
+#contactForm button { padding:12px 20px; background-color:#4caf50; color:white; border:none; border-radius:50px; cursor:pointer; font-size:1em; transition:all 0.3s ease; }
+#contactForm button:hover { background-color:#388e3c; }
+#formMsg { text-align:center; color:#2e7d32; font-weight:bold; }
+
+/* Tips Section */
+.tips-section { background-color:#c8e6c9; padding:40px 20px; }
+
+/* Footer */
+footer { background-color:#2e7d32; color:white; padding:20px; text-align:center; font-size:0.9em; }
+
+/* Responsive */
+@media(max-width:768px){
+  .hero h1 { font-size:2em; }
+  .hero p { font-size:0.95em; max-width:90%; }
+  nav ul { justify-content: center; margin-top:10px; }
+  .game-cards, .tip-cards { flex-direction: column; }
+}
